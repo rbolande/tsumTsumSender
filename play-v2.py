@@ -8,20 +8,20 @@ import math
 import sys, getopt
 from subprocess import call
 
-minsBetweenCollects=10
+minsBetweenCollects = 10
 
 #from collections import OrderedDict
 
 # set the size of the tsumtsum game screen region within which we will operate
 #   isolating the pyautogui locate functions to a screen_region speed up the functions
 #   The offset values are from the center of the nox logo in the header of the window
-region_offset_x=-20
-region_offset_y=21
-region_size_x=680
-region_size_y=1100
-isDebug=False
+region_offset_x = -20
+region_offset_y = 21
+region_size_x = 680
+region_size_y = 1100
+isDebug = False
 
-tsumRegion=(0, 0, 0, 0)
+tsumRegion = (0, 0, 0, 0)
 
 timeStarted = time.time()
 lastClaimTimeCounter = 0
@@ -37,14 +37,14 @@ while len(argv) > 0:
     if arg in ('-d', '--debug'):
         isDebug = True
 
-# base_path='//kidspc/Users/Reid/Pictures/TsumTsum/'
-base_path='//sagetv/TsumTsum/'
-image_path=base_path+'images/'
-#base_path='//sagetv/TsumTsum/'
-rrdTool='C:/Program Files (x86)/rrdtool/rrdtool.exe'
-rrdDbFile='C:\\Users\\Reid\\Pictures\\TsumTsum\\tracker.rrd'
-rrdDbFileGraph='C\:\\Users\\Reid\\Pictures\\TsumTsum\\tracker.rrd'
-rrdGraphPath='//sagetv/TsumTsum'
+# base_path = '//kidspc/Users/Reid/Pictures/TsumTsum/'
+base_path = '//sagetv/TsumTsum/'
+image_path = base_path+'images/'
+#base_path = '//sagetv/TsumTsum/'
+rrdTool = 'C:/Program Files (x86)/rrdtool/rrdtool.exe'
+rrdDbFile = 'C:\\Users\\Reid\\Pictures\\TsumTsum\\tracker.rrd'
+rrdDbFileGraph = 'C\:\\Users\\Reid\\Pictures\\TsumTsum\\tracker.rrd'
+rrdGraphPath = '//sagetv/TsumTsum'
 
 
 # Define the 'dictionary' variable to hold template image information
@@ -125,7 +125,7 @@ def grabWindow():
 
     # set the tuple for the screen region coordinates
     global tsumRegion
-    tsumRegion=(s[0]+region_offset_x, s[1]+region_offset_y, s[0]+region_offset_x+region_size_x, s[1]+region_offset_y+region_size_y)
+    tsumRegion = (s[0]+region_offset_x, s[1]+region_offset_y, s[0]+region_offset_x+region_size_x, s[1]+region_offset_y+region_size_y)
 
     # find the center of the nox_header_logo.  This is needed to calculate the click point later, so it will be returned with the image of the window
     centerPoint = pyautogui.center(k)
@@ -667,7 +667,7 @@ def returnHeart():
         # We clicked a 'check' button, now we need to click the 'OK' button on the "Receive Gift" confirmation dialog
         #  Let's wait for an affirmative response from clicking the "OK" button
         timeEntered = time.time()  # Get the time prior to the while loop so we can measure up to a break out if we get stuck in the loop
-        #time.sleep(0.7)
+        time.sleep(0.6)
         i = 0
         if (isDebug == 1):
             print(readableTimeStamp() + ": clicking 'OK' button to 'Receive Gift'")
