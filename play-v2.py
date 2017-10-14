@@ -38,7 +38,8 @@ while len(argv) > 0:
         isDebug = True
 
 # base_path='//kidspc/Users/Reid/Pictures/TsumTsum/'
-base_path='C:/Users/Reid/Pictures/TsumTsum/'
+base_path='//sagetv/TsumTsum/'
+image_path=base_path+'images/'
 #base_path='//sagetv/TsumTsum/'
 rrdTool='C:/Program Files (x86)/rrdtool/rrdtool.exe'
 rrdDbFile='C:\\Users\\Reid\\Pictures\\TsumTsum\\tracker.rrd'
@@ -48,59 +49,59 @@ rrdGraphPath='//sagetv/TsumTsum'
 
 # Define the 'dictionary' variable to hold template image information
 # structure: (nameKey, filePath, templateSensitivityValue)
-clickablesDict = {'red_heart': [base_path+'red_heart.jpg', 0.6], #0.745  ** 0.65
-                'empty_heart': [base_path+'heart_sent.jpg', 0.90],
-                'close_button': [base_path+'close_button.jpg', 0.8],
-                'close_button_error_code_7': [base_path+'close_button_error_code_7.jpg', 0.8],
-                'claim_all_button': [base_path+'claim_all_button.jpg', 0.80],                                      #0.90
-                'tsum_launch': [base_path+'tsum_app_launcher.jpg', 0.90],
-                'tap_to_start': [base_path+'tap_to_start.jpg', 0.80],
-                'message_box': [base_path+'message_box.jpg', 0.80],
-#                'claim_all': [base_path+'claim_all.jpg', 0.90],
-                'ok_button': [base_path+'ok_button.jpg', 0.7],
-                'heart_sent': [base_path+'heart_sent.jpg', 0.9],
-                'play_again': [base_path+'play_again.jpg', 0.90],
-                'retry_button': [base_path+'retry_button.jpg', 0.80],
-                'changes_in_paid_items_close': [base_path+'changes_in_paid_items_close.jpg', 0.90],
-                'root_detection_permit_button': [base_path+'root_detection_permit_button.jpg', 0.85],
-                'tap_to_start_button': [base_path+'tap_to_start.jpg', 0.80],
-                'check_button': [base_path+'check_button.jpg', 0.80],  #  The button to receive coins and send heart back to the sender
-                'you_got_a_heart_from-coins': [base_path+'you_got_a_heart_from-coins.jpg', 0.80],  #The text to the left of the 'check' button.  This is the key to which records we want to click
-                'you_got_a_heart_from-no_coins': [base_path+'you_got_a_heart_from-no_coins.jpg', 0.80], 
-                'received_single_confirmation': [base_path+'received_single_confirmation.jpg', 0.70]
+clickablesDict = {'red_heart': [image_path+'red_heart.jpg', 0.6], #0.745  ** 0.65
+                'empty_heart': [image_path+'heart_sent.jpg', 0.90],
+                'close_button': [image_path+'close_button.jpg', 0.8],
+                'close_button_error_code_7': [image_path+'close_button_error_code_7.jpg', 0.8],
+                'claim_all_button': [image_path+'claim_all_button.jpg', 0.80],                                      #0.90
+                'tsum_launch': [image_path+'tsum_app_launcher.jpg', 0.90],
+                'tap_to_start': [image_path+'tap_to_start.jpg', 0.80],
+                'message_box': [image_path+'message_box.jpg', 0.80],
+#                'claim_all': [image_path+'claim_all.jpg', 0.90],
+                'ok_button': [image_path+'ok_button.jpg', 0.7],
+                'heart_sent': [image_path+'heart_sent.jpg', 0.9],
+                'play_again': [image_path+'play_again.jpg', 0.90],
+                'retry_button': [image_path+'retry_button.jpg', 0.80],
+                'changes_in_paid_items_close': [image_path+'changes_in_paid_items_close.jpg', 0.90],
+                'root_detection_permit_button': [image_path+'root_detection_permit_button.jpg', 0.85],
+                'tap_to_start_button': [image_path+'tap_to_start.jpg', 0.80],
+                'check_button': [image_path+'check_button.jpg', 0.80],  #  The button to receive coins and send heart back to the sender
+                'you_got_a_heart_from-coins': [image_path+'you_got_a_heart_from-coins.jpg', 0.80],  #The text to the left of the 'check' button.  This is the key to which records we want to click
+                'you_got_a_heart_from-no_coins': [image_path+'you_got_a_heart_from-no_coins.jpg', 0.80], 
+                'received_single_confirmation': [image_path+'received_single_confirmation.jpg', 0.70]
                 }
 
 # This png image is a shot of the top-left title bar "nox" icon image                
-nox_window_top_left_img = base_path+'nox_left_header.png'
+nox_window_top_left_img = image_path+'nox_left_header.png'
 
-listPositionDict = {'top': [base_path+'list_top.jpg', 0.979],
-                    'bottom': [base_path+'list_bottom.jpg', 0.9]
+listPositionDict = {'top': [image_path+'list_top.jpg', 0.979],
+                    'bottom': [image_path+'list_bottom.jpg', 0.9]
                     }
 
-game_state_img_templates = {'error_code_6': [base_path+'error_code_6.jpg', 0.90],
-                            'network_unstable_retry': [base_path+'network_unstable_retry.jpg',0.90],
-                            'info_unable_log_in': [base_path+'info_unable_to_log_in.jpg', 0.98],
-                            'error_code_-1': [base_path+'error_code_-1.jpg', 0.80],
-                            'error_code_7': [base_path+'error_code_7.jpg',0.90],
-                            'heart_sent': [base_path+'heart_sent.jpg', 0.90],                               # 0.96
-                            'gift_a_heart': [base_path+'gift_a_heart.jpg', 0.88],
-                           # 'list_top': [base_path+'list_top.jpg', 0.979],
-                           # 'list_bottom': [base_path+'list_bottom.jpg', 0.9],
-                            'tsum_launch': [base_path+'tsum_app_launcher.jpg', 0.9],
-                            'information': [base_path+'information.jpg', 0.90],
-                            'weekly_ranking': [base_path+'weekly_ranking.jpg', 0.90],
-                            'receive_gifts': [base_path+'receive_all_your_gifts_dialog.jpg', 0.70],
-                            'received_all_confirmation': [base_path+'received_all_confirmation.jpg', 0.9],
-                            'no_messages': [base_path+'no_messages.jpg', 0.9],
-                            'receive_gift_confirmation_dialog': [base_path+'receive_gift_confirmation_dialog.jpg', 0.60],
-                            'player_info_screen': [base_path+'player_info_screen.jpg', 0.85],
-                            'changes_in_paid_items': [base_path+'changes_in_paid_items.jpg', 0.90],
-                            'invite_dialog': [base_path+'invite_dialog.jpg', 0.90],
-                            'root_detection_screen': [base_path+'root_detection_screen.jpg',0.80],
-                            'splash': [base_path+'tap_to_start.jpg', 0.80],  #  This should always go after root detection screen
-                            'received_single_confirmation': [base_path+'received_single_confirmation.jpg', 0.70],
-                            'any_close': [base_path+'close_button.jpg',0.80],
-                            'mail_box': [base_path+'mail_box.jpg',0.8]                                     #0.9
+game_state_img_templates = {'error_code_6': [image_path+'error_code_6.jpg', 0.90],
+                            'network_unstable_retry': [image_path+'network_unstable_retry.jpg',0.90],
+                            'info_unable_log_in': [image_path+'info_unable_to_log_in.jpg', 0.98],
+                            'error_code_-1': [image_path+'error_code_-1.jpg', 0.80],
+                            'error_code_7': [image_path+'error_code_7.jpg',0.90],
+                            'heart_sent': [image_path+'heart_sent.jpg', 0.90],                               # 0.96
+                            'gift_a_heart': [image_path+'gift_a_heart.jpg', 0.88],
+                           # 'list_top': [image_path+'list_top.jpg', 0.979],
+                           # 'list_bottom': [image_path+'list_bottom.jpg', 0.9],
+                            'tsum_launch': [image_path+'tsum_app_launcher.jpg', 0.9],
+                            'information': [image_path+'information.jpg', 0.90],
+                            'weekly_ranking': [image_path+'weekly_ranking.jpg', 0.90],
+                            'receive_gifts': [image_path+'receive_all_your_gifts_dialog.jpg', 0.70],
+                            'received_all_confirmation': [image_path+'received_all_confirmation.jpg', 0.9],
+                            'no_messages': [image_path+'no_messages.jpg', 0.9],
+                            'receive_gift_confirmation_dialog': [image_path+'receive_gift_confirmation_dialog.jpg', 0.60],
+                            'player_info_screen': [image_path+'player_info_screen.jpg', 0.85],
+                            'changes_in_paid_items': [image_path+'changes_in_paid_items.jpg', 0.90],
+                            'invite_dialog': [image_path+'invite_dialog.jpg', 0.90],
+                            'root_detection_screen': [image_path+'root_detection_screen.jpg',0.80],
+                            'splash': [image_path+'tap_to_start.jpg', 0.80],  #  This should always go after root detection screen
+                            'received_single_confirmation': [image_path+'received_single_confirmation.jpg', 0.70],
+                            'any_close': [image_path+'close_button.jpg',0.80],
+                            'mail_box': [image_path+'mail_box.jpg',0.8]                                     #0.9
                             }
                             
                 
@@ -248,7 +249,6 @@ def showClickable(name):
     cv2.waitKey(0)
     
  
-    
     
     
 def sendScreenOfHearts():
@@ -667,7 +667,7 @@ def returnHeart():
         # We clicked a 'check' button, now we need to click the 'OK' button on the "Receive Gift" confirmation dialog
         #  Let's wait for an affirmative response from clicking the "OK" button
         timeEntered = time.time()  # Get the time prior to the while loop so we can measure up to a break out if we get stuck in the loop
-        time.sleep(0.7)
+        #time.sleep(0.7)
         i = 0
         if (isDebug == 1):
             print(readableTimeStamp() + ": clicking 'OK' button to 'Receive Gift'")
@@ -687,7 +687,7 @@ def returnHeart():
                 pyautogui.click( (region_offset_x + centerPoint[0] + pt[0] + (w)), (region_offset_y + centerPoint[1] + pt[1] + (h)) ) # adding 'w' to the x coord and 'h' to the y coord because we want to click on the right side of the template....which should be the 'check' button
             i += 1
         
-        time.sleep(1.1)
+        time.sleep(0.5)
         
         # See if the gameState is still in "Receive Gift"
         myState = gameState()
