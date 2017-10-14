@@ -50,25 +50,25 @@ rrdGraphPath = '//sagetv/TsumTsum'
 # Define the 'dictionary' variable to hold template image information
 # structure: (nameKey, filePath, templateSensitivityValue)
 clickablesDict = {'red_heart': [image_path+'red_heart.jpg', 0.6], #0.745  ** 0.65
-                'empty_heart': [image_path+'heart_sent.jpg', 0.90],
-                'close_button': [image_path+'close_button.jpg', 0.8],
-                'close_button_error_code_7': [image_path+'close_button_error_code_7.jpg', 0.8],
-                'claim_all_button': [image_path+'claim_all_button.jpg', 0.80],                                      #0.90
-                'tsum_launch': [image_path+'tsum_app_launcher.jpg', 0.90],
-                'tap_to_start': [image_path+'tap_to_start.jpg', 0.80],
-                'message_box': [image_path+'message_box.jpg', 0.80],
-#                'claim_all': [image_path+'claim_all.jpg', 0.90],
-                'ok_button': [image_path+'ok_button.jpg', 0.7],
-                'heart_sent': [image_path+'heart_sent.jpg', 0.9],
-                'play_again': [image_path+'play_again.jpg', 0.90],
-                'retry_button': [image_path+'retry_button.jpg', 0.80],
-                'changes_in_paid_items_close': [image_path+'changes_in_paid_items_close.jpg', 0.90],
-                'root_detection_permit_button': [image_path+'root_detection_permit_button.jpg', 0.85],
-                'tap_to_start_button': [image_path+'tap_to_start.jpg', 0.80],
-                'check_button': [image_path+'check_button.jpg', 0.80],  #  The button to receive coins and send heart back to the sender
-                'you_got_a_heart_from-coins': [image_path+'you_got_a_heart_from-coins.jpg', 0.80],  #The text to the left of the 'check' button.  This is the key to which records we want to click
-                'you_got_a_heart_from-no_coins': [image_path+'you_got_a_heart_from-no_coins.jpg', 0.80], 
-                'received_single_confirmation': [image_path+'received_single_confirmation.jpg', 0.70]
+                  'empty_heart': [image_path+'heart_sent.jpg', 0.90],
+                  'close_button': [image_path+'close_button.jpg', 0.8],
+                  'close_button_error_code_7': [image_path+'close_button_error_code_7.jpg', 0.8],
+                  'claim_all_button': [image_path+'claim_all_button.jpg', 0.80],  #0.90
+                  'tsum_launch': [image_path+'tsum_app_launcher.jpg', 0.90],
+                  'tap_to_start': [image_path+'tap_to_start.jpg', 0.80],
+                  'message_box': [image_path+'message_box.jpg', 0.80],
+                  # 'claim_all': [image_path+'claim_all.jpg', 0.90],
+                  'ok_button': [image_path+'ok_button.jpg', 0.7],
+                  'heart_sent': [image_path+'heart_sent.jpg', 0.9],
+                  'play_again': [image_path+'play_again.jpg', 0.90],
+                  'retry_button': [image_path+'retry_button.jpg', 0.80],
+                  'changes_in_paid_items_close': [image_path+'changes_in_paid_items_close.jpg', 0.90],
+                  'root_detection_permit_button': [image_path+'root_detection_permit_button.jpg', 0.85],
+                  'tap_to_start_button': [image_path+'tap_to_start.jpg', 0.80],
+                  'check_button': [image_path+'check_button.jpg', 0.80],  #  The button to receive coins and send heart back to the sender
+                  'you_got_a_heart_from-coins': [image_path+'you_got_a_heart_from-coins.jpg', 0.80],  #The text to the left of the 'check' button.  This is the key to which records we want to click
+                  'you_got_a_heart_from-no_coins': [image_path+'you_got_a_heart_from-no_coins.jpg', 0.80], 
+                  'received_single_confirmation': [image_path+'received_single_confirmation.jpg', 0.70]
                 }
 
 # This png image is a shot of the top-left title bar "nox" icon image                
@@ -85,8 +85,8 @@ game_state_img_templates = {'error_code_6': [image_path+'error_code_6.jpg', 0.90
                             'error_code_7': [image_path+'error_code_7.jpg',0.90],
                             'heart_sent': [image_path+'heart_sent.jpg', 0.90],                               # 0.96
                             'gift_a_heart': [image_path+'gift_a_heart.jpg', 0.88],
-                           # 'list_top': [image_path+'list_top.jpg', 0.979],
-                           # 'list_bottom': [image_path+'list_bottom.jpg', 0.9],
+                            # 'list_top': [image_path+'list_top.jpg', 0.979],
+                            # 'list_bottom': [image_path+'list_bottom.jpg', 0.9],
                             'tsum_launch': [image_path+'tsum_app_launcher.jpg', 0.9],
                             'information': [image_path+'information.jpg', 0.90],
                             'weekly_ranking': [image_path+'weekly_ranking.jpg', 0.90],
@@ -101,7 +101,7 @@ game_state_img_templates = {'error_code_6': [image_path+'error_code_6.jpg', 0.90
                             'splash': [image_path+'tap_to_start.jpg', 0.80],  #  This should always go after root detection screen
                             'received_single_confirmation': [image_path+'received_single_confirmation.jpg', 0.70],
                             'any_close': [image_path+'close_button.jpg',0.80],
-                            'mail_box': [image_path+'mail_box.jpg',0.8]                                     #0.9
+                            'mail_box': [image_path+'mail_box.jpg',0.8]        #0.9
                             }
                             
                 
@@ -687,7 +687,7 @@ def returnHeart():
                 pyautogui.click( (region_offset_x + centerPoint[0] + pt[0] + (w)), (region_offset_y + centerPoint[1] + pt[1] + (h)) ) # adding 'w' to the x coord and 'h' to the y coord because we want to click on the right side of the template....which should be the 'check' button
             i += 1
         
-        time.sleep(0.5)
+        #time.sleep(0.2)
         
         # See if the gameState is still in "Receive Gift"
         myState = gameState()
